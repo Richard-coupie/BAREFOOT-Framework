@@ -1,15 +1,7 @@
-# Batch Bayesian Optimization
-## Implemented within a Model Reification and Fusion Framework
+# BAREFOOT (Batch Reification/Fusion Optimization) Framework
+## Batch Bayesian Optimization Implemented within a Model Reification and Fusion Framework
 
-The code in this repository can be used to run a batch bayesian optimization routine using a 2D toy problem involving the reification and fusion of three reduced-order mechanical models to predict the output of a RVE Mechanical Property model.
-
-Two versions of the code are currently in this repository. These two codes are explained below:
-
-### Cost Constrained - Cost Controlled (CC_CC_optimization.py)
-This version of the code has been manipulated to allow for running the code constraining the total cost as well as calling the truth model only after a certain budget allocation has been spent. 
-
-### Cost Constrained - Iteration Controlled (CC_IC_optimization.py)
-This version of the code runs the case study where the optimization terminates after a certain budget allocation has been met, or when a certain number of iterations have been completed. The second criteria in this code is that the truth model is called after a fixed number of iterations.
+The code in this repository can be used to run a batch bayesian optimization routine. Two test cases are included in this repository.
 
 To run the code, the following python packages will need to be installed:
 - pandas
@@ -35,5 +27,15 @@ The code is set up to run an example problem if no additional inputs are entered
 ```
 python CC_CC_optimization.py M52 2 10 50 2 1 14000 1000
 ```
+
+
+
+### Test Case 1 (Mechanical Models):
+This test case uses three reduced order micromechanical models for predicting the normalized strain hardening rate of a dual-phase steel. The Truth Model in this case is a Representative Volume Element (RVE) model for the mechanical response of a dual-phase steel.
+
+
+
+### Test Case 2 (Three Hump Camel):
+This test case uses the Three Hump Camel Test Function as the Truth Model. Several (up to 5) approximations of this function have been used as the reduced-order models. 
 
 
